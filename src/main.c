@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:04:50 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/16 17:08:40 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/18 16:41:19 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,7 @@ void	game_start(t_game *game)
 		//game->mlx, game->w*game->ww*32, game->h*game->wh*32, "help");
 	image_loader(game);
 	draw_map(game);
-
-	
+	mlx_loop(game->mlx);
 }
 
 void	print_map(char **map)

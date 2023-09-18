@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:51:56 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/16 17:32:12 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/18 19:04:27 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,15 @@ void	image_loader(t_game *game)
 	game->h = 32;
 	game->img = malloc(sizeof(t_img) * (2 + 1));
 	game->img[0].img_ptr = mlx_xpm_file_to_image(game->mlx, 
-		"tiles/dwall.xpm", &game->w, &game->h);
+		"tiles/wall.xpm", &game->w, &game->h);
 	game->img[1].img_ptr = mlx_xpm_file_to_image(game->mlx, 
 		"tiles/floor.xpm", &game->w, &game->h);
 	game->img[2].img_ptr = mlx_xpm_file_to_image(game->mlx, 
-		"tiles/door.xpm", &game->w, &game->h);
+		"tiles/exit.xpm", &game->w, &game->h);
+	game->img[3].img_ptr = mlx_xpm_file_to_image(game->mlx, 
+		"tiles/player.xpm", &game->w, &game->h);
+	game->img[4].img_ptr = mlx_xpm_file_to_image(game->mlx, 
+		"tiles/coin.xpm", &game->w, &game->h);
 	ft_printf("images loaded!\n");
 	image_build(game);
 }
@@ -50,5 +54,9 @@ static void	image_build(t_game *game)
 		&game->img[1].bpp, &game->img[1].size_l, &game->img[1].endian);
 	game->img[2].data = (int *)mlx_get_data_addr(game->img[2].img_ptr, 
 		&game->img[2].bpp, &game->img[2].size_l, &game->img[2].endian);
+	game->img[3].data = (int *)mlx_get_data_addr(game->img[3].img_ptr, 
+		&game->img[3].bpp, &game->img[3].size_l, &game->img[3].endian);
+	game->img[4].data = (int *)mlx_get_data_addr(game->img[4].img_ptr, 
+		&game->img[4].bpp, &game->img[4].size_l, &game->img[4].endian);
 	ft_printf("images printed\n");
 }
