@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:12:43 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/16 16:45:52 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:22:16 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ void	start_parse(char **argv, t_game *game)
 	int		m_len;
 	int		fd;
 
+	fd = 0;
 	map = argv[1];
 	m_len = ft_strlen(map);
 	if (!(map[m_len - 1] == 'r' && map[m_len - 2] == 'e' && map[m_len -3] == 'b'
@@ -88,7 +89,7 @@ void	start_parse(char **argv, t_game *game)
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		exit(1);
-	ft_printf("Map loaded succesfully!\n");
+	ft_printf("Map loaded succesfully in fd %d!\n", fd);
 	map_check(fd, game);
 	close(fd);	
 	map_parse(game);

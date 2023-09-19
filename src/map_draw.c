@@ -6,11 +6,30 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/18 19:07:43 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:32:06 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
+
+void	print_map(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while(map[i])
+	{
+		j = 0;
+		while (map[i][j])
+		{
+			ft_printf("%c", map[i][j]);
+			j++;
+		}
+		ft_printf("\n");
+		i++;
+	}
+}
 
 void	draw_walls_path(t_game *game)
 {
@@ -68,7 +87,7 @@ void	draw_items(t_game *game)
 
 void	draw_map(t_game *game)
 {
-	ft_printf("Start drawing...\n");
+	ft_printf("Start drawing... \n");
 	draw_walls_path(game);
 	draw_items(game);
 }

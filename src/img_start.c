@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:51:56 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/18 19:04:27 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/19 16:30:03 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	get_dimensions(t_game *game)
 	i = 0;
 	while (game->map[i])
 		i++;
-	game->h = i;
-	game->w = ft_strlen(game->map[0]);	
+	game->wh = i;
+	game->ww = ft_strlen(game->map[0]);	
 }
 
 // 	this function loads the tiles into the program
@@ -30,7 +30,7 @@ void	image_loader(t_game *game)
 {
 	game->w = 32;
 	game->h = 32;
-	game->img = malloc(sizeof(t_img) * (2 + 1));
+	game->img = malloc(sizeof(t_img) * (5 + 1));
 	game->img[0].img_ptr = mlx_xpm_file_to_image(game->mlx, 
 		"tiles/wall.xpm", &game->w, &game->h);
 	game->img[1].img_ptr = mlx_xpm_file_to_image(game->mlx, 
@@ -41,7 +41,6 @@ void	image_loader(t_game *game)
 		"tiles/player.xpm", &game->w, &game->h);
 	game->img[4].img_ptr = mlx_xpm_file_to_image(game->mlx, 
 		"tiles/coin.xpm", &game->w, &game->h);
-	ft_printf("images loaded!\n");
 	image_build(game);
 }
 
@@ -58,5 +57,5 @@ static void	image_build(t_game *game)
 		&game->img[3].bpp, &game->img[3].size_l, &game->img[3].endian);
 	game->img[4].data = (int *)mlx_get_data_addr(game->img[4].img_ptr, 
 		&game->img[4].bpp, &game->img[4].size_l, &game->img[4].endian);
-	ft_printf("images printed\n");
+	ft_printf("Images loaded!\n");
 }
