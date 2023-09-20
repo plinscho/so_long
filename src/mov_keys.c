@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:35:52 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 18:32:36 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:06:57 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ void	move_up(t_game *game)
 {
 	if (move_valid(game, game->p_row - 1, game->p_col))
 	{
+		take_coin(game, game->p_row - 1, game->p_col);
 		if (game->map[game->p_row][game->p_col] == 'E')
 			mlx_put_image_to_window(game->mlx, game->mlx_w, \
 				game->img[2].img_ptr, game->p_col * 32, game->p_row * 32);
@@ -54,6 +55,7 @@ void	move_up(t_game *game)
 
 void	move_down(t_game *game)
 {
+	take_coin(game, game->p_row + 1, game->p_col);
 	if (move_valid(game, game->p_row + 1, game->p_col))
 	{
 		if (game->map[game->p_row][game->p_col] == 'E')
@@ -73,6 +75,7 @@ void	move_down(t_game *game)
 
 void	move_left(t_game *game)
 {
+	take_coin(game, game->p_row, game->p_col - 1);
 	if (move_valid(game, game->p_row, game->p_col - 1))
 	{
 		if (game->map[game->p_row][game->p_col] == 'E')
@@ -92,6 +95,7 @@ void	move_left(t_game *game)
 
 void	move_right(t_game *game)
 {
+	take_coin(game, game->p_row, game->p_col + 1);
 	if (move_valid(game, game->p_row, game->p_col + 1))
 	{
 		if (game->map[game->p_row][game->p_col] == 'E')

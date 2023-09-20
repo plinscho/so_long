@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:05:21 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 17:26:47 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 19:04:28 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void	map_find_path(t_game *game);
 // MOVEMENT
 int		mov_keys(int key, t_game *game);
 int		move_valid(t_game *game, int i, int j);
+void	take_coin(t_game *game, int i, int j);
 
 #endif
