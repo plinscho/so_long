@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:04:50 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/19 16:28:36 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 18:14:11 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ int main(int argc, char **argv)
 			exit (1);
 		game_init(game);
 		start_parse(argv, game);
-//		Untill here all good
 		game_start(game);
+		mlx_loop(game->mlx);
 		return (0);
 	}
 	else 
@@ -43,5 +43,6 @@ void	game_start(t_game *game)
 	game->mlx_w = mlx_new_window(game->mlx,game->ww * 32, game->wh * 32,"so_long");
 	image_loader(game);
 	draw_map(game);
-	mlx_loop(game->mlx);
+//	build player movement
+	mlx_hook(game->mlx_w, 2, 0, mov_keys, game);
 }

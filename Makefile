@@ -1,5 +1,6 @@
 NAME = so_long
 CFLAGS = -Wall -Werror -Wextra -g
+SAN = -fsanitize=leak
 
 LIBFT = include/libft/libft.a
 SRCDIR = src
@@ -9,7 +10,8 @@ OBJECTS = $(patsubst $(SRCDIR)/%.c, $(OBJDIR)/%.o, $(SRC))
 MLX = include/mlx/libmlx.a
 
 SRC = src/main.c src/map_parser.c src/error.c src/map_parse_walls.c \
-		src/map_parse_items.c src/map_path.c src/img_start.c src/map_draw.c
+		src/map_parse_items.c src/map_path.c src/img_start.c src/map_draw.c \
+		src/mov_keys.c src/mov_utils.c
 
 OLD_MAKE = /usr/bin/make3.81 #make
 
@@ -19,7 +21,7 @@ all:
 	@$(MAKE) $(NAME)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
-	@printf "Compiling objects"
+	@printf "Compiling $<\n"
 	@mkdir -p $(@D)
 	@gcc $(CFLAGS) -c $< -o $@ -Iinclude/libft -Iinclude/mlx
 

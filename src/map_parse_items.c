@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 23:21:21 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/13 18:16:29 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:40:46 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,11 @@ void	map_get_items(char **map, t_game *game)
 			if (map[i][j] == 'C')
 				game->coin += 1;
 			else if (map[i][j] == 'P')
+			{
 				game->player += 1;
+				game->p_row = i;
+				game->p_col = j;
+			}
 			else if (map[i][j] == 'E')
 				game->exit += 1;
 			j++;

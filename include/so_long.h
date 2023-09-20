@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:05:21 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/16 16:45:32 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:26:47 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 	# define SO_LONG_H
 
 # include "libft/libft.h"
+# include "constants.h"
 # include <mlx.h>
 
 enum{
@@ -81,6 +82,8 @@ void	game_start(t_game *game);
 void	error_nl(char *line);
 void	error_exit(char **map, int error_enum, char *err_msg);
 void	free_map(char **map);
+void	game_finish(t_game *game, int i, int j);
+void	destroy_game(t_game *game);
 
 //	MAP_PARSE.C
 void	map_parse(t_game *game);
@@ -90,5 +93,8 @@ int		check_rec(t_game *game);
 int		check_items(t_game *game);
 void	map_find_path(t_game *game);
 
+// MOVEMENT
+int		mov_keys(int key, t_game *game);
+int		move_valid(t_game *game, int i, int j);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:51:56 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/19 16:30:03 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 17:34:25 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	get_dimensions(t_game *game)
 	while (game->map[i])
 		i++;
 	game->wh = i;
-	game->ww = ft_strlen(game->map[0]);	
+	game->ww = ft_strlen(game->map[0]);
 }
 
 // 	this function loads the tiles into the program
@@ -31,6 +31,8 @@ void	image_loader(t_game *game)
 	game->w = 32;
 	game->h = 32;
 	game->img = malloc(sizeof(t_img) * (5 + 1));
+	if (!game->img)
+		exit(1);
 	game->img[0].img_ptr = mlx_xpm_file_to_image(game->mlx, 
 		"tiles/wall.xpm", &game->w, &game->h);
 	game->img[1].img_ptr = mlx_xpm_file_to_image(game->mlx, 

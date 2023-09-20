@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:32:47 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/13 18:33:07 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/20 16:25:00 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,13 @@
 
 void get_initial_pos(t_game *game, t_point *player_pos);
 void validate_map(t_game *game, t_point *player_pos);
+
+int		move_valid(t_game *game, int i, int j)
+{
+	if (game->map[i][j] == '1')
+		return (0);
+	return (1);
+}
 
 void	map_find_path(t_game *game)
 {

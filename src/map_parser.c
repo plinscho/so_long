@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:12:43 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/19 16:22:16 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/19 18:41:20 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void	map_check(int fd, t_game *game)
 		free(line);
 		line = get_next_line(fd);
 		if (!line)
-			break;		
+			break;
 		if (line && line[0] == '\n')
 			error_nl(line);
 		tmp = all_lines;
