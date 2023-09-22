@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:51:46 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/19 19:01:45 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 16:54:02 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	error_exit(char **map, int error_enum, char *err_msg)
 		error_free(map, err_msg);
 	else if (error_enum == ITEM_ERR)
 		error_free(map, err_msg);
-	
 }
 
 void	error_free(char **map, char *err_msg)

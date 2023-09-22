@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:35:52 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 19:06:57 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:11:02 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	move_up(t_game *game)
 		game_finish(game, game->p_row, game->p_col);
 		ft_printf("Moves: %d\n", game->mov);
 		game->mov += 1;
-	}	
+	}
 }
 
 void	move_down(t_game *game)
@@ -70,7 +70,7 @@ void	move_down(t_game *game)
 		game_finish(game, game->p_row, game->p_col);
 		ft_printf("Moves: %d\n", game->mov);
 		game->mov += 1;
-	}	
+	}
 }
 
 void	move_left(t_game *game)
@@ -90,7 +90,7 @@ void	move_left(t_game *game)
 		game_finish(game, game->p_row, game->p_col);
 		ft_printf("Moves: %d\n", game->mov);
 		game->mov += 1;
-	}	
+	}
 }
 
 void	move_right(t_game *game)
@@ -110,5 +110,5 @@ void	move_right(t_game *game)
 		game_finish(game, game->p_row, game->p_col);
 		ft_printf("Moves: %d\n", game->mov);
 		game->mov += 1;
-	}	
+	}
 }

@@ -6,14 +6,14 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:12:43 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/19 18:41:20 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:06:28 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/so_long.h"
 
 void	map_parse(t_game *game);
-void	map_check(int fd, t_game *game);;
+void	map_check(int fd, t_game *game);
 
 void	game_init(t_game *game)
 {
@@ -40,12 +40,12 @@ void	map_check(int fd, t_game *game)
 
 	line = ft_strdup("");
 	all_lines = ft_strdup("");
-	while(line)
+	while (line)
 	{
 		free(line);
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		if (line && line[0] == '\n')
 			error_nl(line);
 		tmp = all_lines;
@@ -91,7 +91,6 @@ void	start_parse(char **argv, t_game *game)
 		exit(1);
 	ft_printf("Map loaded succesfully in fd %d!\n", fd);
 	map_check(fd, game);
-	close(fd);	
+	close (fd);
 	map_parse(game);
 }
-

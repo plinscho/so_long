@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 23:21:21 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 17:40:46 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:02:50 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	check_items(t_game *game)
 	return (0);
 }
 
-int		valid_chars(int c)
+int	valid_chars(int c)
 {
 	if (c == 'C' || c == 'P' || c == 'E' || c == '0' || c == '1')
 		return (1);
@@ -50,6 +50,13 @@ void	map_inv_chars(char **map)
 	}
 }
 
+void	add_player(t_game *game, int i, int j)
+{
+	game->player += 1;
+	game->p_row = i;
+	game->p_col = j;
+}
+
 void	map_get_items(char **map, t_game *game)
 {
 	int		i;
@@ -64,18 +71,13 @@ void	map_get_items(char **map, t_game *game)
 			if (map[i][j] == 'C')
 				game->coin += 1;
 			else if (map[i][j] == 'P')
-			{
-				game->player += 1;
-				game->p_row = i;
-				game->p_col = j;
-			}
+				add_player(game, i, j);
 			else if (map[i][j] == 'E')
 				game->exit += 1;
 			j++;
 		}
 		i++;
 	}
-//	ft_printf("coins: %d | exits: %d\n", game->coin, game->exit);
 	if (game->exit != 1)
 		error_exit(map, ITEM_EXIT, "Error\nNo exit. | Too many exits.\n");
 	if (game->player != 1)

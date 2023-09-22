@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 17:55:24 by plinscho         ###   ########.fr       */
+/*   Created: 2023/09/22 16:58:44 by plinscho          #+#    #+#             */
+/*   Updated: 2023/09/22 16:59:07 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_map(char **map)
 	int	j;
 
 	i = 0;
-	while(map[i])
+	while (map[i])
 	{
 		j = 0;
 		while (map[i][j])
