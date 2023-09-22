@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:35:52 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/22 17:11:02 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:21:41 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	move_right(t_game *game);
 
 int	mov_keys(int key, t_game *game)
 {
-	ft_printf("player at: %d, %d\n", game->p_row, game->p_col);
 	if (key == ESC)
 		destroy_game(game);
 	if (key == W || key == ARROW_UP)

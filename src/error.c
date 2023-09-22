@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 17:51:46 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/22 16:54:02 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:20:01 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,15 @@
 
 void	error_free(char **map, char *err_msg);
 
-void	destroy_game(t_game *game)
+int	destroy_game(t_game *game)
 {
 	ft_printf("Game Over\n");
+	free_map(game->map);
 	mlx_destroy_image(game->mlx, game->img);
 	mlx_destroy_window(game->mlx, game->mlx_w);
-	mlx_destroy(game->mlx);
-	free_map(game->map);
+	// mlx_destroy(game->mlx);
 	free(game);
-	exit(1);
+	exit(2);
 }
 
 void	error_nl(char *line)

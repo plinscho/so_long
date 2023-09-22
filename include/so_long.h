@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/09 16:05:21 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 19:04:28 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:27:13 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	error_nl(char *line);
 void	error_exit(char **map, int error_enum, char *err_msg);
 void	free_map(char **map);
 void	game_finish(t_game *game, int i, int j);
-void	destroy_game(t_game *game);
+int		destroy_game(t_game *game);
 
 //	MAP_PARSE.C
 void	map_parse(t_game *game);

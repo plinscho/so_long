@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 16:51:56 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/22 16:55:08 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 17:21:08 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	get_dimensions(t_game *game)
 	game->ww = ft_strlen(game->map[0]);
 }
 
-// 	this function loads the tiles into the program
+// 	this function loads the textures into the program
 void	image_loader(t_game *game)
 {
 	game->w = 32;
@@ -34,15 +34,15 @@ void	image_loader(t_game *game)
 	if (!game->img)
 		exit(1);
 	game->img[0].img_ptr = mlx_xpm_file_to_image(game->mlx, \
-		"tiles/wall.xpm", &game->w, &game->h);
+		"textures/wall.xpm", &game->w, &game->h);
 	game->img[1].img_ptr = mlx_xpm_file_to_image(game->mlx, \
-		"tiles/floor.xpm", &game->w, &game->h);
+		"textures/floor.xpm", &game->w, &game->h);
 	game->img[2].img_ptr = mlx_xpm_file_to_image(game->mlx, \
-		"tiles/exit.xpm", &game->w, &game->h);
+		"textures/exit.xpm", &game->w, &game->h);
 	game->img[3].img_ptr = mlx_xpm_file_to_image(game->mlx, \
-		"tiles/player.xpm", &game->w, &game->h);
+		"textures/player.xpm", &game->w, &game->h);
 	game->img[4].img_ptr = mlx_xpm_file_to_image(game->mlx, \
-		"tiles/coin.xpm", &game->w, &game->h);
+		"textures/coin.xpm", &game->w, &game->h);
 	image_build(game);
 }
 

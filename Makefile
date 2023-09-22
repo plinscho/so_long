@@ -27,7 +27,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.c
 
 $(NAME): $(OBJECTS) $(HEADERS) Makefile $(LIBFT) $(MLX)
 	@mkdir -p $(@D)
-	@gcc $(CFLAGS) -o ${NAME} ${OBJECTS} -Iinclude/libft/include -Linclude/libft -lft \
+	@gcc $(CFLAGS) -g -o ${NAME} ${OBJECTS} -Iinclude/libft/include -Linclude/libft -lft \
 	-Iinclude/mlx -Linclude/mlx -lmlx -framework OpenGL -framework AppKit
 	@printf "\nCompiled successfully!\n"
 
