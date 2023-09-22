@@ -6,7 +6,7 @@
 /*   By: plinscho <plinscho@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/20 17:18:59 by plinscho          #+#    #+#             */
-/*   Updated: 2023/09/20 19:04:00 by plinscho         ###   ########.fr       */
+/*   Updated: 2023/09/22 16:51:34 by plinscho         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@ void	game_finish(t_game *game, int i, int j)
 void	take_coin(t_game *game, int i, int j)
 {
 	if (game->map[i][j] == 'C')
+	{
 		game->coin--;
+		game->map[i][j] = '0';
+	}
 }
